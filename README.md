@@ -2,7 +2,7 @@
 
 [![Backend CI](https://github.com/ycr80/EnterpriseWms/actions/workflows/backend-ci.yml/badge.svg)](https://github.com/ycr80/EnterpriseWms/actions/workflows/backend-ci.yml)
 
-面向传统企业信息化岗位的 C#/.NET 求职作品：以 ASP.NET Core Web API 和 EF Core 为业务后端，以 .NET Framework 4.8 WinForms 为桌面管理端，并通过 SQL Server 存储过程保证并发出库的数据一致性。
+EnterpriseWms 是一个基于 C#/.NET 的企业仓储管理系统：以 ASP.NET Core Web API 和 EF Core 为业务后端，以 .NET Framework 4.8 WinForms 为桌面管理端，并通过 SQL Server 存储过程保证并发出库的数据一致性。
 
 ## 技术栈
 
@@ -97,7 +97,6 @@ powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1
 - [REST API 摘要](docs/API.md)
 - [Crystal Reports 接入说明](docs/CRYSTAL_REPORTS_SETUP.md)
 - [端到端验收记录](docs/ACCEPTANCE.md)
-- [简历描述与面试问答](docs/RESUME_AND_INTERVIEW.md)
 - [Crystal Reports PDF 验收产物](docs/CrystalInventoryReport-Acceptance.pdf)
 
 ## 运行截图
