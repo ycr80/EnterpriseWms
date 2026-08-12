@@ -1,0 +1,26 @@
+// SAP Crystal Reports SP40 x64 安装后，将本模板加入 EnterpriseWms.WinForms，
+// 并添加 CrystalDecisions.CrystalReports.Engine、CrystalDecisions.Shared、
+// CrystalDecisions.Windows.Forms 引用和 Reports/InventoryReport.rpt。
+using System.Data;
+using System.IO;
+using System.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Windows.Forms;
+
+namespace EnterpriseWms.WinForms;
+
+internal sealed class CrystalInventoryPreviewForm : Form
+{
+    private readonly ReportDocument _report = new();
+    public CrystalInventoryPreviewForm(DataTable inventoryRows)
+    {
+        Text = "Crystal Reports 库存报表";
+        WindowState = FormWindowState.Maximized;
+        var viewer = new CrystalReportViewer { Dock = DockStyle.Fill, ToolPanelView = ToolPanelViewType.None };
+        Controls.Add(viewer);
+        _report.Load(Path.Combine(Application.StartupPath, "Reports", "InventoryReport.rpt"));
+        _report.SetDataSource(inventoryRows);
+        viewer.ReportSource = _report;
+        FormClosed += (_, __) => { _report.Close(); _report.Dispose(); };
+    }
+}

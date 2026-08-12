@@ -1,0 +1,9 @@
+bin/
+obj/
+.vs/
+TestResults/
+src/EnterpriseWms.Api/appsettings.Local.json
+src/EnterpriseWms.WinForms/client.local.json
+*.user
+*.suo
+*.rpt.bak
